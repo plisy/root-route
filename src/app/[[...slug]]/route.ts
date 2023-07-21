@@ -2,7 +2,7 @@ import { INTERNALS } from "next/dist/server/web/spec-extension/request";
 import { NextResponse, NextRequest } from "next/server";
 const querystring = require("querystring");
 
-export async function handler(req: NextRequest, context: any) {
+async function handler(req: NextRequest, context: any) {
   let body = "";
 
   try {
@@ -17,7 +17,7 @@ export async function handler(req: NextRequest, context: any) {
       console.log("reading body as text");
       const body = await req.text();
 
-      console.log("body: ", body)
+      console.log("body: ", body);
     } catch (_) {
       console.log("cannot read body as text");
     }
